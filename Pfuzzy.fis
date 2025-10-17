@@ -1,0 +1,33 @@
+[System]
+Name='Pfuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='prod'
+AggMethod='probor'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='E'
+Range=[-3 3]
+NumMFs=3
+MF1='NE':'trimf',[-3 -3 0]
+MF2='ZE':'trimf',[-3 0 3]
+MF3='PO':'trimf',[0 3 3]
+
+[Output1]
+Name='U'
+Range=[-6 6]
+NumMFs=3
+MF1='NE':'trimf',[-6 -6 0]
+MF2='ZE':'trimf',[-6 0 6]
+MF3='PO':'trimf',[0 6 6]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1
